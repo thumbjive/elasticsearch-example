@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @article.content %>
+  <strong>Abstract:</strong>
+  <%= @article.abstract %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= link_to @article.url, @article.url %>
 </p>
 
 <p>

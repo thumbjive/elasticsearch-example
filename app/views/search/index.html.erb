@@ -143,6 +143,8 @@
           <small>Authors: <%= article.authors.map(&:full_name).to_sentence %></small> |
           <small>Published: <%= article.published_on %></small> |
           <small>Score: <%= article._score %></small>
+          <br>
+          <small><%= link_to article.url, article.url, target: '_blank' %></small>
         </p>
       </div>
     <% end %>
@@ -156,5 +158,10 @@
 </div>
 
 <div class="footer <%= @articles.size < 1 ? 'col-md-12' : 'col-md-9 col-md-offset-3' %>">
-  <p><small>Content provided by <a href="http://nytimes.com"><em>The New York Times</em></a>.</small></p>
+  <p>
+    <small>
+      Content provided by <a href="http://nytimes.com"><em>The New York Times</em></a>. &mdash;
+      <%= link_to 'Edit', articles_path %>
+    </small>
+  </p>
 </div>
